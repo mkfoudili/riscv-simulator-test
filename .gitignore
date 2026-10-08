@@ -5,8 +5,8 @@ __pycache__/
 build/
 dist/
 
-artifacts/
+artifacts/gem5/*
+artifacts/logs/*
 *.log
-*.elf
 
 m5out*/

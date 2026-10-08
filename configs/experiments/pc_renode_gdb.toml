@@ -1,0 +1,21 @@
+[experiment]
+name = "pc_fault"
+
+[program]
+name = "pc_test"
+elf = "pc_test.elf"
+
+[execution]
+mode = "gdb"
+inject_at = 0x80000008
+end_at = 0x80000010
+output_register = "x5"
+step_after_injection = true
+
+[simulator]
+name = "renode"
+port = 1234
+
+[fault]
+type = "pc"
+value = 0x80000010
