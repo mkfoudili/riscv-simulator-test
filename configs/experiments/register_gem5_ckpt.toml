@@ -6,14 +6,14 @@ name = "register_test"
 elf = "register_test.elf"
 
 [execution]
-mode = "gdb"
+mode = "checkpoint"
 inject_at = 0x80000008
 end_at = 0x8000000c
 output_register = "x10"
 
 [simulator]
-name = "renode"
-port = 1234
+name = "gem5"
+port = 7000
 
 [fault]
 type = "register"
