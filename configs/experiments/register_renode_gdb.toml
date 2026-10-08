@@ -1,0 +1,21 @@
+[experiment]
+name = "register_fault"
+
+[program]
+name = "register_test"
+elf = "register_test.elf"
+
+[execution]
+mode = "gdb"
+inject_at = 0x80000008
+end_at = 0x8000000c
+output_register = "x10"
+
+[simulator]
+name = "renode"
+port = 1234
+
+[fault]
+type = "register"
+register = "x5"
+value = "0x11111101"
