@@ -1,0 +1,21 @@
+[experiment]
+name = "memory_fault"
+
+[program]
+name = "memory_test"
+elf = "memory_test.elf"
+
+[execution]
+mode = "checkpoint"
+inject_at = 0x80000008
+end_at = 0x80000010
+output_register = "x10"
+
+[simulator]
+name = "gem5"
+port = 7000
+
+[fault]
+type = "memory"
+address_register = "x5"
+value = "0x11111101"

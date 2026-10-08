@@ -1,0 +1,13 @@
+using sysbus
+mach create "riscv"
+machine LoadPlatformDescription @riscv_min.repl
+
+$elf?=@memory_test.elf
+
+macro reset
+"""
+    sysbus LoadELF $elf
+    sysbus.cpu PC 0x80000000
+"""
+runMacro $reset
+machine StartGdbServer 1234

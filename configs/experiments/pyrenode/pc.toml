@@ -1,0 +1,21 @@
+[experiment]
+name = "pyrenode_pc_fault"
+
+[program]
+name = "pc_test"
+elf = "pc_test.elf"
+
+[execution]
+mode = "pyrenode"
+inject_at = "fault_injection_point"
+end_at = "end"
+output_register = "x5"
+
+[simulator]
+name = "renode"
+timeout = 5.0
+platform = "../../simulators/renode/riscv_min.repl"
+
+[fault]
+type = "pc"
+value = "end"

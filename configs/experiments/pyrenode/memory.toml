@@ -1,0 +1,22 @@
+[experiment]
+name = "pyrenode_memory_fault"
+
+[program]
+name = "memory_test"
+elf = "memory_test.elf"
+
+[execution]
+mode = "pyrenode"
+inject_at = "fault_injection_point"
+end_at = "end"
+output_register = "x10"
+
+[simulator]
+name = "renode"
+timeout = 5.0
+platform = "../../simulators/renode/riscv_min.repl"
+
+[fault]
+type = "memory"
+address_register = "x5"
+value = "0x11111101"

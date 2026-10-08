@@ -1,0 +1,6 @@
+cpu: CPU.RiscV64 @ sysbus
+    cpuType: "rv64gc"
+    hartId: 0
+
+mem: Memory.MappedMemory @ sysbus 0x80000000
+    size: 0x10000000
